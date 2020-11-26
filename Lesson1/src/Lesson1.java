@@ -5,11 +5,13 @@ public class Lesson1 {
     public static void main(String[] args){
 
         boolean chose = true;
+        boolean chse2 = true;
         int cs;
         String vv;
         Scanner scanner = new Scanner(System.in);
 
         do {
+
             System.out.print("Выбирете задание от 1 до 7:");
             cs = scanner.nextInt();
             switch (cs){
@@ -40,16 +42,21 @@ public class Lesson1 {
                 case 7:
                     programists();
                     break;
+                default:
+                    System.out.print("Неверное число.");
             }
 
-            System.out.print("Желаете продолжить Да/Нет ?");
-            vv = scanner.nextLine();
+            do {
+                System.out.print("Желаете продолжить Да/Нет ?");
+                vv = scanner.nextLine();
+                if(vv.equals("Да")){
+                    chse2 = false;
+                } else if (vv.equals("Нет")){
+                    chose = false;
+                    chse2  = false;
+                } else System.out.print("Шьто я не поняль?");
+            }while (chse2);
 
-            if(vv.equals("Да")){
-                chose = true;
-            } else if (vv.equals("Нет")){
-                chose = false;
-            }
         } while (chose);
     }
 
