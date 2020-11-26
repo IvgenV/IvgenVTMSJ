@@ -4,8 +4,53 @@ public class Lesson1 {
 
     public static void main(String[] args){
 
-        
+        boolean chose = true;
+        int cs;
+        String vv;
+        Scanner scanner = new Scanner(System.in);
 
+        do {
+            System.out.print("Выбирете задание от 1 до 7:");
+            cs = scanner.nextInt();
+            switch (cs){
+                case 1:
+                    getCountofDigits();
+                    break;
+
+                case 2:
+                    triangle();
+                    break;
+
+                case 3:
+                    number();
+                    break;
+
+                case 4:
+                    positiveNumber();
+                    break;
+
+                case 5:
+                    positiveAndNegative();
+                    break;
+
+                case 6:
+                    biggestone();
+                    break;
+
+                case 7:
+                    programists();
+                    break;
+            }
+
+            System.out.print("Желаете продолжить Да/Нет ?");
+            vv = scanner.nextLine();
+
+            if(vv.equals("Да")){
+                chose = true;
+            } else if (vv.equals("Нет")){
+                chose = false;
+            }
+        } while (chose);
     }
 
     public static void getCountofDigits(){
