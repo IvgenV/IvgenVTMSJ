@@ -10,7 +10,7 @@ public class ToshibaHand implements IHand {
 
     @Override
     public void moveHand(){
-        System.out.println("Поднимается рука Toshiba");
+        System.out.println("Toshiba's hand is raised");
     }
 
     @Override

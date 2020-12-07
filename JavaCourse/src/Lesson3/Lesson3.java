@@ -8,7 +8,7 @@ import Lesson3.Transport.Land.FreightTransport;
 public class Lesson3 {
 
     public static void main(String[] args){
-        militaryAir();
+
     }
 
     public static void passengerCar(){

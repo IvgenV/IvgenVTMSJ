@@ -1,8 +1,8 @@
-package Lesson4.сlothes.pants;
+package Lesson4.clothes.pants;
 
 public interface IPants {
 
-    String putn();
+    String putOn();
 
     String takeoff();
 

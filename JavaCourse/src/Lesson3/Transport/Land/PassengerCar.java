@@ -52,9 +52,9 @@ public class PassengerCar extends LandTransport {
 
     @Override
     public String toString(){
-        return "За время " + time + " ч, автомобиль " + getBrand() + " двигась с максимальной скоростью " +
-                getMaxspeed() + " км.ч, проедет " + carDistance() + " км, и израсходует " +  carFuelConsumption() +
-                " литров топлива";
+        return "During " + time + " hour, car " + getBrand() + " moving at maximum speed " +
+                getMaxspeed() + " km in hour, will pass " + carDistance() + " km, and will use up " +  carFuelConsumption() +
+                " liters of fuel";
     }
 
     public Double Kilowatts(){

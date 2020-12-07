@@ -10,7 +10,7 @@ public class SonyHand implements IHand {
 
     @Override
     public void moveHand(){
-        System.out.println("Поднимметс рука Sony");
+        System.out.println("Sony's hand will rise");
     }
 
     @Override

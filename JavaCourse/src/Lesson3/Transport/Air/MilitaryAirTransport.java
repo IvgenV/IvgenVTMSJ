@@ -7,14 +7,14 @@ public class MilitaryAirTransport extends AirTransport {
 
     private String shot(){
         if(rockets>0){
-            return "ракета пошла!";
-        } else return "боеприпасы отсутствуют";
+            return "Rocket go!";
+        } else return "no ammunition";
     }
 
     private String isBailout(){
         if(bailout){
-            return "катапультирование прошло успешно";
-        } else return "у вас нет такой системы";
+            return "bailout was successful";
+        } else return "у вас нет системы катапультирования";
     }
 
     public MilitaryAirTransport(int rockets,boolean bailout){
@@ -40,10 +40,10 @@ public class MilitaryAirTransport extends AirTransport {
 
     @Override
     public String toString(){
-        return "Марка " + getBrand() + ", максимальная скорость " + getMaxspeed() + " км в час, мощность " +
-                getPower() + " лошадиных сил," + '\n' + "мощность в виловаттах " + Kilowatts() +  ", вес " +
-                getWeight() + " кг, размах крыльев " + getWingspan() +
-                ", минимальная длина взлётно-посадочной полосы для взлёта " + getMinrunway() + " м," +  '\n'+
+        return "Brand " + getBrand() + ", maximum speed " + getMaxspeed() + " km int hour, power " +
+                getPower() + " horse power," + '\n' + "power in kilowatts " + Kilowatts() +  ", weight " +
+                getWeight() + " kg, wingspan " + getWingspan() +
+                ", minimum runway length for take-off " + getMinrunway() + " m," +  '\n'+
                 shot() + ' ' + isBailout();
     }
 }

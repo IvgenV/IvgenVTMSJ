@@ -10,7 +10,7 @@ public class SamsungHead implements IHead{
 
     @Override
     public void speak() {
-        System.out.println("Говорит голова Samsung");
+        System.out.println("Samsung head speaks");
     }
 
     @Override

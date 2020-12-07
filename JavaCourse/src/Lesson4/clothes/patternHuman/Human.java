@@ -1,15 +1,15 @@
-package Lesson4.сlothes.patternHuman;
+package Lesson4.clothes.patternHuman;
 
-import Lesson4.сlothes.jackets.IJacket;
-import Lesson4.сlothes.pants.IPants;
-import Lesson4.сlothes.shoes.IShoes;
+import Lesson4.clothes.jackets.IJacket;
+import Lesson4.clothes.pants.IPants;
+import Lesson4.clothes.shoes.IShoes;
 
 public class Human implements IHumanLook {
 
-    String name;
-    IJacket jacket;
-    IPants pants;
-    IShoes shoes;
+    private String name;
+    private IJacket jacket;
+    private IPants pants;
+    private IShoes shoes;
 
     public Human(String name,IJacket jacket,IPants pants,IShoes shoes){
         this.name = name;
@@ -51,8 +51,8 @@ public class Human implements IHumanLook {
     }
 
     @Override
-    public void getdressed() {
-        System.out.println(name + ' ' + jacket.putn() + ' ' + pants.putn() + ' ' + shoes.putn());
+    public void getDressed() {
+        System.out.println(name + ' ' + jacket.putOn() + ' ' + pants.putOn() + ' ' + shoes.putOn());
     }
 
     @Override

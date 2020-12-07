@@ -1,8 +1,8 @@
-package Lesson4.сlothes.shoes;
+package Lesson4.clothes.shoes;
 
 public interface IShoes {
 
-    String putn();
+    String putOn();
 
     String takeoff();
 

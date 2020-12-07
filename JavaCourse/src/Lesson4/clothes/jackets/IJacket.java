@@ -1,8 +1,8 @@
-package Lesson4.сlothes.jackets;
+package Lesson4.clothes.jackets;
 
 public interface IJacket {
 
-    String putn();
+    String putOn();
 
     String takeoff();
 

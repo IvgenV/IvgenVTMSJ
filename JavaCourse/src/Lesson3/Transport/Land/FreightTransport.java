@@ -39,16 +39,16 @@ public class FreightTransport extends LandTransport {
 
     @Override
     public String toString(){
-        return "Марка " + getBrand() + ", максимальная скорость " + getMaxspeed() + " км в час, мощность " +
-                getPower() + " лошадиных сил, вес " + getWeight() + " кило, количество колес "
+        return "Brand " + getBrand() + ", maximum speed " + getMaxspeed() + " km in hour, power " +
+                getPower() + " horse power, weight " + getWeight() + " kg, number of wheels "
                 + getWheels() + ',' + '\n' +
-                "расход топлива " + getFuelconsumption() + " литров на сотню, грузоподъемность " + getCarrying()
-                + " киллограм, мощность в киловатах " + Kilowatts() + '\n' +  isCarrying();
+                "fuel consumption " + getFuelconsumption() + " liters per hundred kilometers, lifting capacity " + getCarrying()
+                + " kg, power in kilowatts " + Kilowatts() + '\n' +  isCarrying();
     }
 
     public String isCarrying(){
         if(carrying>currentCarrying){
-            return  "Грузовик загружен";
-        } else return "Вам нужен грузовик побольше";
+            return  "Truck loaded";
+        } else return "You need a bigger truck";
     }
 }

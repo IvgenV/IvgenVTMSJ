@@ -8,14 +8,14 @@ public class CivilianAirTransport extends AirTransport {
 
     private String isFlying(){
         if(maxPassengers> passengers){
-            return " Пассажиры загружены!";
-        } else return " Вам нужен больший самолет!";
+            return " Passengers loaded!";
+        } else return " You need a bigger plane!";
     }
 
     private String business(){
         if(business){
-            return "Бизнес класс в наличии";
-        } else return "Мажорам нет места";
+            return "Business class available";
+        } else return "There is no place for majors";
     }
 
     public CivilianAirTransport(int passengers, boolean business){
@@ -45,10 +45,11 @@ public class CivilianAirTransport extends AirTransport {
 
     @Override
     public String toString(){
-        return "Марка " + getBrand() + ", максимальная скорость " + getMaxspeed() + " км в час, мощность " +
-                getPower() + " лошадиных сил," +  '\n' + "мощность в киловаттах " + Kilowatts() + " ,вес " + getWeight() + " кг, размах крыльев "
-                + getWingspan() + ", минимальная длина взлётно-посадочной полосы для взлёта " + getMinrunway() + " м," +  '\n' +
-                "текущее количество пассажиров " + passengers + " человек, максимальное количество " +
-                "пасажиров " + maxPassengers + isFlying() + ", наличие бизнес класса: " + business();
+        return "Brand: " + getBrand() + ", maximum speed: " + getMaxspeed() + " km in hour, power: " +
+                getPower() + " horse power," +  '\n' + "power in kilowatts: " + Kilowatts() + " ,weight: " +
+                getWeight() + " kg, wingspan: "
+                + getWingspan() + ", minimum runway length for take-off: " + getMinrunway() + " m," +  '\n' +
+                "current number of passengers: " + passengers + " person, maximum number " +
+                "passengers: " + maxPassengers + isFlying() + ", business class availability: " + business();
     }
 }

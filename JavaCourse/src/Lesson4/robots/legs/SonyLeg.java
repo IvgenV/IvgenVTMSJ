@@ -10,7 +10,7 @@ public class SonyLeg implements ILeg{
 
     @Override
     public void step() {
-        System.out.println("Шагает нога Sony");
+        System.out.println("Sony feet walking");
     }
 
     @Override

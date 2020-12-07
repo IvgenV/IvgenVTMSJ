@@ -5,12 +5,12 @@ import Lesson4.space.spaceships.IStart;
 public class Cosmodrome {
 
     public void launch(IStart iStart) throws InterruptedException {
-        System.out.println("\nСтарт проверки:");
-        if(!iStart.systemCheck()){
-            System.out.println("\nПредстартова проверка провалена».");
-        }else{
+        System.out.println("\nStart check:");
+        if(iStart.systemCheck()){
             iStart.startEngins();
             iStart.start();
+        }else{
+            System.out.println("\nPrelaunch check failed».");
         }
     }
 }
