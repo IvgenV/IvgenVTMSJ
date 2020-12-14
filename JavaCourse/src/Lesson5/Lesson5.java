@@ -16,7 +16,6 @@ public class Lesson5 {
                 "fugiat quo voluptas nulla pariatur?";
 
         Count count = new Count();
-        count.count(string,'v');
         System.out.println(count.count(string,'v'));
         System.out.println(count.countChar(string,'v'));
         System.out.println(count.countStartEnd(string,'s'));
@@ -33,7 +32,7 @@ public class Lesson5 {
         public int count(String string, char ch) {
             int count = 0;
             for (int i=0;i<string.length();i++){
-                if(ch==string.charAt(i)){
+                if(ch==string.toLowerCase(Locale.ROOT).charAt(i)){
                     count++;
                 }
             }
@@ -42,14 +41,14 @@ public class Lesson5 {
 
         @Override
         public int countChar(String string,char ch){
+
             int count = 0;
             String [] words = string.split(" ");
 
             for (String str: words) {
-                if(str.charAt(0)==' '){
-                    break;
-                }
-                if(str.charAt(0)==ch){
+                if(str.equals("")){
+                    continue;
+                }else if(str.toLowerCase(Locale.ROOT).charAt(0)==ch){
                     count++;
                 }
             }
@@ -61,7 +60,10 @@ public class Lesson5 {
             int count = 0;
             String[] words = string.split(" ");
             for(String str:words){
-                if(str.charAt(0)==ch&str.charAt(str.length()-1)==ch){
+
+                if(str.equals("")){
+                    continue;
+                }else if(str.toLowerCase(Locale.ROOT).charAt(0)==ch&str.toLowerCase(Locale.ROOT).charAt(str.length()-1)==ch){
                     count++;
                 }
             }
@@ -76,10 +78,11 @@ public class Lesson5 {
             for (String word : words) {
                 word =  word.replaceAll("[!-?]","");
                 String reverseWord = new StringBuilder(word).reverse().toString();
-                if (word.toLowerCase(Locale.ROOT).equals(reverseWord.toLowerCase(Locale.ROOT))) {
+                if(word.equals("")){
+                    continue;
+                }else if(word.toLowerCase(Locale.ROOT).equals(reverseWord.toLowerCase(Locale.ROOT))) {
                     count++;
                 }
-
             }
             return count;
         }
@@ -87,21 +90,19 @@ public class Lesson5 {
         @Override
         public String firstPalindrome(String string) {
 
-            int firstPalindrome = 0;
+            String palindrome="";
 
             String[] words = string.split(" ");
             for(String word:words){
                 word =  word.replaceAll("[!-?]","");
                 String reverseWord = new StringBuilder(word).reverse().toString();
-                if(word.toLowerCase(Locale.ROOT).equals(reverseWord.toLowerCase(Locale.ROOT))){
-                    firstPalindrome++;
-                    return word;
-                }
-                if(firstPalindrome==1){
+               if(word.equals("")){
+                    continue;
+                }else if(word.toLowerCase(Locale.ROOT).equals(reverseWord.toLowerCase(Locale.ROOT))){
+                    palindrome = word;
                     break;
-                }
+                }else palindrome = "Palindrome not found";
             }
-
-            return "Palindrome not found";
+            return palindrome;
         }
 }

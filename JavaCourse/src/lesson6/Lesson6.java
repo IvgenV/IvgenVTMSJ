@@ -2,21 +2,29 @@ package lesson6;
 
 public class Lesson6 {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
        carStarted();
     }
 
-    public static void carStarted(){
-        Car car1 = new Car("AUDI",260,45000);
-        Car car2 = new Car("BMW",320,65000);
+    public static void carStarted() throws InterruptedException {
 
-        try {
-            System.out.println(car1.start());
-            System.out.println(car2.start());
-        } catch (CarExeption exception){
-            System.out.println(exception.getMessage());
-            System.out.println("number of error " + exception.getNumber());
+        String[] brand = {"AUDI","BMW","FORD","MAZDA","HONDA","HYUNDAI","LADA","KIA","MERCEDES","VOLKSWAGEN","TOYOTA"};
+
+        for (;;){
+
+            int numberBrand = (int) (Math.random()*11);
+            int speed = (int)(Math.random()*151)+100;
+            int coast = (int)(Math.random()*80001)+20000;
+
+            Car car = new Car(brand[numberBrand],speed,coast);
+            Thread.sleep(1000);
+
+            try {
+                System.out.println(car.start() + " Brand " + brand[numberBrand] + " Speed " + speed + " Coast " + coast);
+            } catch (CarExeption exception){
+                System.out.println(exception.getMessage());
+                System.out.println("number of error " + exception.getNumber());
+            }
         }
     }
-
 }
