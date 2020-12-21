@@ -1,4 +1,4 @@
-package lesson6;
+package Lesson6;
 
 public class CarExeption extends Exception{
 

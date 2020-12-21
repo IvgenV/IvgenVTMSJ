@@ -97,7 +97,7 @@ public class Lesson5 {
                 word =  word.replaceAll("[!-?]","");
                 String reverseWord = new StringBuilder(word).reverse().toString();
                if(word.equals("")){
-                    continue;
+
                 }else if(word.toLowerCase(Locale.ROOT).equals(reverseWord.toLowerCase(Locale.ROOT))){
                     palindrome = word;
                     break;
