@@ -93,7 +93,6 @@ public class Lesson7 {
         int count=0;
         StringBuilder text = new StringBuilder();
         String s="";
-        StringBuilder foulLanguageSentence = new StringBuilder();
 
         try {
 
@@ -106,22 +105,25 @@ public class Lesson7 {
                 }else text.append((char) c);
             }
 
-            String[] ms = text.toString().split("\n");
 
-            while ((s = bufferedReader.readLine())!=null){
-                for (String str1:ms){
-                    String[] ms2 = str1.split(" ");
-                    for (String str2:ms2){
-                        if(str2.equals(s)){
+            String[] textMas = text.toString().split("\n");
+            StringBuilder temporarySentence = new StringBuilder();
+
+            while ((s = bufferedReader.readLine()) != null){
+                for (String sentence:textMas){
+                    String[] ms2 = sentence.split(" ");
+                    for (String word:ms2){
+                        word = sentence.replaceAll("[ -?]","");
+                        if(word.equals(s)){
                             count++;
-                            foulLanguageSentence.append(str2);
+                            temporarySentence.append(sentence).append(" ");
                         }
                     }
-
                 }
             }
 
-            System.out.println(foulLanguageSentence + " " + count);
+            System.out.println(temporarySentence + " " + count);
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
