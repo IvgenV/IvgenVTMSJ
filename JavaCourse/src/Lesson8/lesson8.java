@@ -882,7 +882,7 @@ public class lesson8 {
                 contin = false;
             }
 
-            for(int i=0;i<mas.length;i++){
+            for(int i=0;i<mas.length;i++){////????????
                  draw = Arrays.asList(mas[i]).contains(" - ");
                  break;
             }

@@ -8,22 +8,22 @@ public class Lesson7 {
 
     public static void main(String[] args) throws IOException {
 
-        task4();
+
 
     }
 
     public static void task1() throws IOException {
 
-        BufferedReader bufRead = null;
-        BufferedWriter bufWr = null;
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
 
         try {
-            bufRead = new BufferedReader(new FileReader("notes.txt"));
+            bufferedReader = new BufferedReader(new FileReader("notes.txt"));
 
             String str;
             StringBuilder str2= new StringBuilder();
 
-            while ((str=bufRead.readLine())!=null){
+            while ((str=bufferedReader.readLine())!=null){
                 String reverseWord = new StringBuilder(str).reverse().toString();
                 if(str.toLowerCase(Locale.ROOT).equals(reverseWord.toLowerCase(Locale.ROOT))){
                     str2.append(str).append("\n");
@@ -31,19 +31,19 @@ public class Lesson7 {
             }
             str2.deleteCharAt(str2.length()-1);
 
-            bufWr = new BufferedWriter(new FileWriter("palindromes.txt"));
-            bufWr.write(str2.toString());
+            bufferedWriter = new BufferedWriter(new FileWriter("palindromes.txt"));
+            bufferedWriter.write(str2.toString());
 
 
 
         } catch (IOException ex){
             ex.printStackTrace();
         } finally {
-            if(bufRead!=null){
-                bufRead.close();
+            if(bufferedReader!=null){
+                bufferedReader.close();
             }
-            if(bufWr!=null){
-                bufWr.close();
+            if(bufferedWriter!=null){
+                bufferedWriter.close();
             }
         }
 
@@ -60,9 +60,9 @@ public class Lesson7 {
         try {
             fileIn = new FileInputStream("task2.txt");
             bufferWr = new BufferedWriter(new FileWriter("newTask2.txt"));
-            int a;
-            while ((a = fileIn.read())!=-1){
-                if((char)a=='.'||(char)a=='?'||(char)a=='!'){
+            int letter;
+            while ((letter = fileIn.read())!=-1){
+                if((char)letter=='.'||(char)letter=='?'||(char)letter=='!'){
                     threeOrFive = TextFormater.countWordInLine(temporaryText.toString());
                     isPalindrome = TextFormater.palindrome(temporaryText.toString());
                     if(threeOrFive||isPalindrome){
@@ -70,7 +70,7 @@ public class Lesson7 {
                     }
                     temporaryText.delete(0,temporaryText.length());
                 } else {
-                    temporaryText.append((char)a);
+                    temporaryText.append((char)letter);
                 }
             }
             System.out.print(finalText);

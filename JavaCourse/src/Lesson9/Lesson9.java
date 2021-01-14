@@ -8,15 +8,7 @@ public class Lesson9 {
 
     public static void main(String[] args) {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int i=0;
-        try {
-            i = reader.read();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(i);
+        shop();
 
     }
 
@@ -111,7 +103,7 @@ public class Lesson9 {
                         switch (input){
 
                             case 1:{
-                                List<Product> products = shop.receiveAllProducts();
+                                List<Product> products = new ArrayList<>(shop.receiveAllProducts());
                                 products.sort(new Comparator<Product>() {
                                     @Override
                                     public int compare(Product o1, Product o2) {
@@ -126,7 +118,7 @@ public class Lesson9 {
                             }
 
                             case 2:{
-                                List<Product> products = shop.receiveAllProducts();
+                                List<Product> products = new ArrayList<>(shop.receiveAllProducts());
                                 products.sort(new Comparator<Product>() {
                                     @Override
                                     public int compare(Product o1, Product o2) {
@@ -142,7 +134,7 @@ public class Lesson9 {
                             }
 
                             case 3:{
-                                List<Product> products = shop.receiveAllProducts();
+                                List<Product> products = new ArrayList<>(shop.receiveAllProducts());
                                 Collections.reverse(products);
                                 for(Product product:products){
                                     System.out.println(product.toString());
