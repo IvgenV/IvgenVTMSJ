@@ -1,13 +1,14 @@
 package Lesson7;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.Locale;
 
 public class Lesson7 {
 
     public static void main(String[] args) throws IOException {
 
-        task3();
+        task4();
 
     }
 
@@ -108,15 +109,19 @@ public class Lesson7 {
 
             String[] textMas = text.toString().split("\n");
             StringBuilder temporarySentence = new StringBuilder();
+            boolean[] matorno = new boolean[textMas.length];
 
             while ((s = bufferedReader.readLine()) != null){
-                for (String sentence:textMas){
-                    String[] ms2 = sentence.split(" ");
+                for (int i=0;i<textMas.length;i++){
+                    String[] ms2 = textMas[i].split(" ");
                     for (String word:ms2){
-                        word = sentence.replaceAll("[ -?]","");
-                        if(word.equals(s)){
+                        word = word.replaceAll("[ -?]","");
+                        if(matorno[i]){
+
+                        } else if(word.equals(s)& !temporarySentence.toString().equals(textMas[i])){
                             count++;
-                            temporarySentence.append(sentence).append(" ");
+                            temporarySentence.append(textMas[i]).append(" ");
+                            matorno[i]=true;
                         }
                     }
                 }
@@ -125,10 +130,28 @@ public class Lesson7 {
             System.out.println(temporarySentence + " " + count);
 
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
+    }
+
+    public static void task4(){
+
+        try(ObjectOutputStream ou = new ObjectOutputStream(new FileOutputStream("carSeriazsaa.dat"))) {
+            CarSerializable car = new CarSerializable("AUDI",250,45000);
+            ou.writeObject(car);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try(ObjectInputStream oi = new ObjectInputStream(new FileInputStream("carSeriazsaa.dat"))) {
+            CarSerializable car = (CarSerializable) oi.readObject();
+            System.out.println(car.getBrand() + " " + car.getCoast() + " " + car.getSpeed());
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        ;
+
+
     }
 }
